@@ -1,12 +1,12 @@
 ﻿from datetime import date
 dict_note = {}
 class note: 
-    def __init__(self, date, heading, text): 
-        self.date = date 
+    def __init__(self, new_date, heading, text): 
+        self.new_date = new_date 
         self.heading = heading
         self.text = text
     def __str__(self): 
-        return "Заметка: " + self.date + " " + self.heading + " " + self.text
+        return "Заметка: " + str(self.new_date) + " " + self.heading + " " + self.text
 
 def new_note():
     print("Создание новой заметки:")
@@ -23,5 +23,4 @@ def new_text():
 
 def new_date():
     new_date = date.today()
-    return str(new_date)
-
+    return new_date
