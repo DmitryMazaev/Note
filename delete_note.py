@@ -45,11 +45,13 @@ def delete_for_id():
     add_note.print_dict()
     while True:
         try:
-            delete_str = input("Введите id заметки, которую вы хотите удалить: ")
+            delete_str = int(input("Введите id заметки, которую вы хотите удалить: "))
             if delete_str in note.dict_note.keys():
                 note.dict_note.pop(int(delete_str))
                 add_note.new_dict.pop(int(delete_str))
                 add_note.whrite_to_json_file()
+                print("Заметка удалена!")
+                break
             else:
                 print("Введенный id отсутствует в выведенном перечне")
         except ValueError:
